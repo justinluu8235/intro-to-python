@@ -226,20 +226,20 @@
 #     print(element)
 
 
-# students = [
-#     {
-#         "name" : "Kimmie",
-#         "city" : "Atlanta"
-#     },
-#     {
-#         "name" : "Chris",
-#         "city" : "Sale Lake City"
-#     },
-#     {
-#         "name" : "Zack",
-#         "city" : "Los Angeles"
-#     }
-# ]
+students = [
+    {
+        "name" : "Kimmie",
+        "city" : "Atlanta"
+    },
+    {
+        "name" : "Chris",
+        "city" : "Sale Lake City"
+    },
+    {
+        "name" : "Zack",
+        "city" : "Los Angeles"
+    }
+]
 
 # for i in range(len(students)):
 #     student = students[i]
@@ -271,23 +271,45 @@
 #   print("{}. {}".format(i, food))
 
 
-def say_hello(friend="Tim"):
-  print("Hello, {}!".format(friend))
+# def say_hello(friend="Tim"):
+#   print("Hello, {}!".format(friend))
 
 
-say_hello("Tom")
+# say_hello("Tom")
 
-def move(name, city="Seattle", state="Washington"):
-  msg = "{} is moving to {}, {}"
-  msg = msg.format(name, city, state)
-  print(msg)
+# def move(name, city="Seattle", state="Washington"):
+#   msg = "{} is moving to {}, {}"
+#   msg = msg.format(name, city, state)
+#   print(msg)
 
-move("Charlie", "Los Angeles", "California")
-move(city="San Fransisco", name="Mark", state="California")
-move("John", state="New York", city="New York")
+# move("Charlie", "Los Angeles", "California")
+# move(city="San Fransisco", name="Mark", state="California")
+# move("John", state="New York", city="New York")
 
 
-def say_bye(name1, name2):
-    print(f'{name1} said hi to {name2}')
+# def say_bye(name1, name2):
+#     print(f'{name1} said hi to {name2}')
 
-say_bye("justin", "john")
+# say_bye("justin", "john")
+
+def get_cities(students):
+    '''Return a list of all cities from the student array'''
+    result = []
+    for s in students:
+        if s.get('city'):
+            result.append(s.get('city'))
+
+    return result
+
+def get_names(students):
+    '''Return a list of all names from the student array'''
+    result = []
+    for s in students:
+        if s.get('name'):
+            result.append(s.get('name'))
+
+    return result
+
+
+print(get_cities(students))
+print(get_names(students))

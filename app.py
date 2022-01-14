@@ -227,18 +227,42 @@
 
 
 students = [
-    {
-        "name" : "Kimmie",
-        "city" : "Atlanta"
+    { 
+        "name": "Kimmie",
+        "city": "Atlanta"
     },
-    {
-        "name" : "Chris",
-        "city" : "Sale Lake City"
+    { 
+        "name": "Chris",
+        "city": "Salt Lake City"
     },
-    {
-        "name" : "Zack",
-        "city" : "Los Angeles"
-    }
+    { 
+        "name": "Zack",
+        "city": "Los Angeles"
+    },
+     { 
+        "name": "John",
+        "city": "Atlanta"
+    },
+    { 
+        "name": "Jane",
+        "city": "New York"
+    },
+    { 
+        "name": "Rob",
+        "city": "Los Angeles"
+    },
+     { 
+        "name": "Harper",
+        "city": "Washington"
+    },
+    { 
+        "name": "Mike",
+        "city": "Seattle"
+    },
+    { 
+        "name": "Set",
+        "city": "San Francisco"
+    },
 ]
 
 # for i in range(len(students)):
@@ -296,7 +320,7 @@ def get_cities(students):
     '''Return a list of all cities from the student array'''
     result = []
     for s in students:
-        if s.get('city'):
+        if s.get('city') and s.get('city') not in result:
             result.append(s.get('city'))
 
     return result
@@ -313,3 +337,24 @@ def get_names(students):
 
 print(get_cities(students))
 print(get_names(students))
+
+
+def parse_by_cities(students):
+    '''
+    Return a dictionary that has a key for each cities 
+    and a list of students for each city 
+    '''
+    result = {}
+    for student in students: 
+        # if city is not in the dictionary, add the city and set an array with the
+        if(student.get('city')):
+            city = student.get('city')
+            if not result.get(city):
+                result[city] = [student.get('name')]
+            # if city is in the dictionary, append student name 
+            else:
+                result[city].append(student.get('name'))
+
+    return result
+
+print( parse_by_cities(students))
